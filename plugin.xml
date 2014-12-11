@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.krikkiteer.plugins.windowSoftInputPlugin"
+      version="1.0">
+    <name>windowSoftInputPlugin</name>
+    <description>Modify windowSoftInput-setting from JS</description>
+    <license>Apache 2.0</license>
+    <keywords>windowSoftInput</keywords>
+
+    <js-module src="www/js/windowSoftInputPlugin.js" name="windowSoftInputPlugin">
+        <clobbers target="window.windowSoftInputPlugin" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="windowSoftInputPlugin" >
+                <param name="android-package" value="com.krikkiteer.plugins.windowSoftInputPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/windowSoftInputPlugin.java" target-dir="src/com/krikkiteer/plugins" />
+    </platform>
+    
+</plugin>
