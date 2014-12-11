@@ -1,22 +1,22 @@
 var windowSoftInputPlugin = {
     setInputAdjustPan: function () {
-        cordova.exec(null, null, "windowSoftInputPlugin", "setInputAdjustPan", [""]);
+        cordova.exec(s, f, "windowSoftInputPlugin", "setInputAdjustPan", [""]);
     },
     
     setInputAdjustResize: function () {
-        cordova.exec(null, null, "windowSoftInputPlugin", "setInputAdjustResize", [""]);
+        cordova.exec(s, f, "windowSoftInputPlugin", "setInputAdjustResize", [""]);
     }, 
 
     setInputAdjustUnspecified: function () {
-        cordova.exec(null, null, "windowSoftInputPlugin", "setInputAdjustUnspecified", [""]);
+        cordova.exec(s, f, "windowSoftInputPlugin", "setInputAdjustUnspecified", [""]);
     },
 
     setFullScreenFlag: function () {
-        cordova.exec(null, null, "windowSoftInputPlugin", "setFullScreenFlag", [""]);
+        cordova.exec(s, f, "windowSoftInputPlugin", "setFullScreenFlag", [""]);
     },
-    
+
     unsetFullScreenFlag: function () {
-        cordova.exec(null, null, "windowSoftInputPlugin", "unsetFullScreenFlag", [""]);
+        cordova.exec(s, f, "windowSoftInputPlugin", "unsetFullScreenFlag", [""]);
     }
 };
 module.exports = windowSoftInputPlugin;

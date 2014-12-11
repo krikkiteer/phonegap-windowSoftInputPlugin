@@ -21,15 +21,15 @@ public class windowSoftInputPlugin extends CordovaPlugin {
     				System.out.println("setting softInputMode to SOFT_INPUT_ADJUST_PAN");
 	            }
 	        });
-            //cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            //callbackContext.success(action);
             return true;
         } else if (action.equalsIgnoreCase("setInputAdjustResize")){
             System.out.println("setInputAdjustResize");
             cordova.getActivity().runOnUiThread(new Runnable() {
                 public void run() {
-                    cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+                    cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+                    System.out.println("before win.hasSoftInputMode = " + cordova.getActivity().getWindow().hasSoftInputMode());
                     System.out.println("setting softInputMode to SOFT_INPUT_ADJUST_RESIZE");
+                    System.out.println("after win.hasSoftInputMode = " + cordova.getActivity().getWindow().hasSoftInputMode());
                 }
             });
             return true;
