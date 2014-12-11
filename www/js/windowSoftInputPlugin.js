@@ -9,6 +9,14 @@ var windowSoftInputPlugin = {
 
     setInputAdjustUnspecified: function () {
         cordova.exec(null, null, "windowSoftInputPlugin", "setInputAdjustUnspecified", [""]);
+    },
+
+    setFullScreenFlag: function () {
+        cordova.exec(null, null, "windowSoftInputPlugin", "setFullScreenFlag", [""]);
+    },
+    
+    unsetFullScreenFlag: function () {
+        cordova.exec(null, null, "windowSoftInputPlugin", "unsetFullScreenFlag", [""]);
     }
 };
 module.exports = windowSoftInputPlugin;

@@ -42,11 +42,28 @@ public class windowSoftInputPlugin extends CordovaPlugin {
                 }
             });
             return true;
+        } else if (action.equalsIgnoreCase("setFullScreenFlag")){
+            System.out.println("setFullScreenFlag");
+            cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                    cordova.getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                    System.out.println("setting window-flag FULLSCREEN");
+                }
+            });
+            return true;
+        } else if (action.equalsIgnoreCase("unsetFullScreenFlag")){
+            System.out.println("unsetFullScreenFlag");
+            cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                    cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_UNSPECIFIED);
+                    System.out.println("un-setting window-flag FULLSCREEN");
+                }
+            });
+            return true;
         } else {
 			System.out.println("UNKNOWN");
 			callbackContext.error("unknown action" + action);
             return false;
         }
 	}
-
 }
